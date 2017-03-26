@@ -15,7 +15,7 @@ nav {
     }
     .sideMenuTrigger {
       position: absolute;
-      right: -0.9em;
+      right: -1em;
       top: 0.2em;
       .iconContainer {
         margin: 0;
@@ -46,10 +46,10 @@ aside {
   color: $lightGrey;
   font-size: 0.8em;
   white-space: nowrap;
-  width: 2.8%;
-  // width: 50px;
+  width: calc(2.8% - 5px);
   -webkit-transition: width 0.5s; /* Safari */
   transition: width 0.5s;
+  border-right: 5px solid $lightBlue;
   .item {
     padding: 1em;
     align-items: center;

@@ -13,7 +13,7 @@
 
     /* ======================================== Var ==================================================== */
     vm.misc = {
-      isSideMenuOpen: false
+      isSideMenuOpen: true
     };
     vm.sideMenuItem = [];
 
