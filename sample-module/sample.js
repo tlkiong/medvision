@@ -2,17 +2,17 @@
   'use strict';
     
   angular.module('Sample', [])
-    .config(/*@ngInject*/function ($stateProvider) {
+    .config(function ($stateProvider) {
       $stateProvider
         .state('sample', {
-            url: '/',
-            views: {
-                'main': {
-                    templateUrl: './modules/sample/sample.html',
-                    controller: 'sampleController',
-                    controllerAs: 'vm'
-                }
+          url: '/',
+          views: {
+            'main': {
+              templateUrl: './modules/sample/sample.html',
+              controller: 'sampleController',
+              controllerAs: 'vm'
             }
+          }
         });
         /** The below shows how to load a view within 'root.html'
          *  This is because this will be a child state of root.html
