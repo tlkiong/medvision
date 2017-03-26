@@ -1,0 +1,32 @@
+{
+  "name": "medvision",
+  "version": "1.0.0",
+  "homepage": "https://github.com/tlkiong/medvision#readme",
+  "authors": [
+    "Kiong <kiong90@gmail.com>"
+  ],
+  "description": "Test for Medvision260.com Senior AngularJs Position",
+  "main": "www/index.html",
+  "moduleType": [],
+  "keywords": [
+    "medvision"
+  ],
+  "license": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "angular-sanitize": "^1.5.8",
+    "angular-touch": "^1.5.8",
+    "angular-translate": "^2.12.1"
+  }
+}
