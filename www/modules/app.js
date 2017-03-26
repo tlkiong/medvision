@@ -7,7 +7,7 @@
       'Root',
       'Report'
   ])
-  .config(function($locationProvider, $stateProvider, $urlRouterProvider, $compileProvider) {
+  .config(function($translateProvider, translationHelperProvider, $locationProvider, $stateProvider, $urlRouterProvider, $compileProvider) {
     $urlRouterProvider.otherwise('report-acq');
     $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|file|blob|cdvfile|content):|data:image\//);
     // Uncomment the below line when deploying. This will remove all errors that is shown in console.log
@@ -22,11 +22,11 @@
     /* ==================================== Translation ==================================== */
     // --- To use the below translation provider, add as param in the config's fn: translationHelperProvider
     // ---      The dependency used here is 'angular-translate'
-    // var translationSvc = translationHelperProvider.$get();
+    var translationSvc = translationHelperProvider.$get();
     
-    // $translateProvider.translations('en', translationSvc.getTranslationType('en'));
-    // $translateProvider.preferredLanguage('en');
-    // $translateProvider.useSanitizeValueStrategy('sanitize'); // Refer http://angular-translate.github.io/docs/#/guide/19_security for security on Angular-translate
+    $translateProvider.translations('en', translationSvc.getTranslationType('en'));
+    $translateProvider.preferredLanguage('en');
+    $translateProvider.useSanitizeValueStrategy('sanitize'); // Refer http://angular-translate.github.io/docs/#/guide/19_security for security on Angular-translate
     /* ==================================== End: Translation ==================================== */
   }).run(function(sessionService, commonService,$state, $rootScope) {
   	var cmnSvc = commonService;

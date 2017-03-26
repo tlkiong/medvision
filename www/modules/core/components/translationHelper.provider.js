@@ -36,7 +36,11 @@
       /* ======================================== Private Methods ======================================== */
       function getEnglishObj() {
         return {
-          // 'SAMPLE': 'Hohoho'
+          'LOGIN': 'login',
+          'LOGOUT': 'log out',
+          'ACQ_REPORT': 'ACQ report',
+          'BP_REPORT': 'blood pressure report',
+          'BMI_REPORT': 'BMI report'
         }
       }
 

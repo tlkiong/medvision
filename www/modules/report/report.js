@@ -15,7 +15,7 @@
           },
           sidemenu: {
             iconName: 'heart',
-            lbl: 'ACQ report',
+            lbl: 'ACQ_REPORT',
             order: 1
           }
         })
@@ -30,7 +30,7 @@
           },
           sidemenu: {
             iconName: 'heart',
-            lbl: 'blood pressure report',
+            lbl: 'BP_REPORT',
             order: 2
           }
         })
@@ -45,7 +45,7 @@
           },
           sidemenu: {
             iconName: 'heart',
-            lbl: 'BMI report',
+            lbl: 'BMI_REPORT',
             order: 3
           }
         });

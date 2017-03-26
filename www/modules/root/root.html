@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="otherContainer flexAcross">
-      <div class="logoutBtn clickable">log out</div>
+      <div class="logoutBtn clickable">{{ 'LOGOUT' | translate}}</div>
     </div>
   </nav>
   <section class="flexAcross bottomSection">
@@ -32,7 +32,7 @@
             <use xlink:href="{{ '#icon-' + item.iconName }}"></use>
           </svg>
         </div>
-        <div class="lbl">{{ item.lbl }}</div>
+        <div class="lbl">{{ item.lbl | translate }}</div>
       </div>
     </aside>
     <div class="contentContainer">
