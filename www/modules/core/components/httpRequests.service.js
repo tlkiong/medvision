@@ -11,18 +11,29 @@
 
       /* ======================================== Var ==================================================== */
       service.misc = {
-            
-      };
-      service.baseUrl = '';
-      var apiObj = {
-        /*  Example:
         
-          name: {
-        methodType: 'POST' / 'GET' / 'PUT' / 'DELETE',
-        url: '...',
-        nextUrlPart: '...'    <= This refers to eg: http://www.google.com/:id/nextUrlPart
-          }
-         */
+      };
+
+      service.baseUrl = 'https://dev.medrecord.nl/ehr';
+      var apiObj = {
+        bmi_get: {
+          methodType: 'GET',
+          url: '',
+          nextUrlPart: 'procedure/bmi'
+          // idOnUrl: ':ehrId'
+        },
+        acq_get: {
+          methodType: 'GET',
+          url: '',
+          nextUrlPart: 'procedure/acq'
+          // idOnUrl: ':ehrId'
+        },
+        bp_get: {
+          methodType: 'GET',
+          url: '',
+          nextUrlPart: 'procedure/bloodpressure'
+          // idOnUrl: ':ehrId'
+        }
       }
 
       /* ======================================== Services =============================================== */
