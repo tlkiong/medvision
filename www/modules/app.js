@@ -4,20 +4,21 @@
   angular.module('app', [
       'Core',
       'Directives',
-      'Sample'
+      'Root',
+      'Report'
   ])
   .config(function($locationProvider, $stateProvider, $urlRouterProvider, $compileProvider) {
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('report-acq');
     $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|file|blob|cdvfile|content):|data:image\//);
     // Uncomment the below line when deploying. This will remove all errors that is shown in console.log
     // $compileProvider.debugInfoEnabled(false);
     // 
     // use the HTML5 History API
     // Also known as remove the '#' from the URL
-    $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
-    });
+    // $locationProvider.html5Mode({
+    //     enabled: true,
+    //     requireBase: false
+    // });
     /* ==================================== Translation ==================================== */
     // --- To use the below translation provider, add as param in the config's fn: translationHelperProvider
     // ---      The dependency used here is 'angular-translate'
@@ -33,29 +34,7 @@
 
     $rootScope.$on('$stateChangeStart', function(evnt, toState, toParams, fromState, fromParams) {
       if(cmnSvc.isObjPresent(toState.role) && cmnSvc.isObjPresent(sessionSvc.userData) && cmnSvc.isObjPresent(sessionSvc.userData.role)) {
-        if(toState.url === '/') {
-          if(sessionSvc.isUserLoggedIn() === true) {
-            evnt.preventDefault();
-            $state.go('dashboard');
-          } else {
-            evnt.preventDefault();
-            $state.go('home');
-          }
-        } else {
-          if((toState.role.toLowerCase != 'public')){
-            if(sessionSvc.isUserLoggedIn() != true) {
-              evnt.preventDefault();
-              $state.go('login');
-            } else {
-              if(hasNoAccess(toState.role)) {
-                // Show unauthorized page
-                alert('You are unauthorized to enter here');
-                evnt.preventDefault();
-                $state.go('login');
-              }
-            }
-          }
-        }
+        // This is for ALC
       }
     });
 

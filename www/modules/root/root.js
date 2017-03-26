@@ -5,8 +5,8 @@
     .config(function ($stateProvider) {
       $stateProvider
         .state('root', {
-          // abstract: true,
-          url: '/root',
+          abstract: true,
+          url: '',
           views: {
             'main': {
               templateUrl: './modules/root/root.html',

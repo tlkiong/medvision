@@ -1,29 +1,26 @@
 (function() {
   'use strict';
+  
+  angular.module('Report')
+    .controller('bloodPressureReportController', bloodPressureReportController);
 
-  angular.module('Root')
-    .controller('rootController', rootController);
+  bloodPressureReportController.$inject = ['commonService', 'reportService'];
 
-  rootController.$inject = ['commonService', 'rootService'];
-
-  function rootController(commonService, rootService) {
+  function bloodPressureReportController(commonService, reportService) {
     var vm = this;
 
     /* ======================================== Var ==================================================== */
-    vm.misc = {
-        
-    };
+    vm.misc = {};
 
     /* ======================================== Services =============================================== */
-    var svc = rootService;
+    var svc = reportService;
     var cmnSvc = commonService;
 
     /* ======================================== Public Methods ========================================= */
-    
 
     /* ======================================== Private Methods ======================================== */
     function init() {
-      
+        
     }
 
     init();
