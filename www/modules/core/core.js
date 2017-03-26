@@ -6,6 +6,7 @@
       'ngTouch',
       'ngAnimate',
       'ui.router',
-      'pascalprecht.translate'
+      'pascalprecht.translate',
+      'nvd3'
     ]);
 })();
