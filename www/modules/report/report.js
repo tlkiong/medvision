@@ -12,6 +12,11 @@
               controller: 'acqReportController',
               controllerAs: 'vm'
             }
+          },
+          sidemenu: {
+            iconName: 'heart',
+            lbl: 'ACQ report',
+            order: 1
           }
         })
         .state('root.bloodPressureReport', {
@@ -22,6 +27,11 @@
               controller: 'bloodPressureReportController',
               controllerAs: 'vm'
             }
+          },
+          sidemenu: {
+            iconName: 'heart',
+            lbl: 'blood pressure report',
+            order: 2
           }
         })
         .state('root.bmiReport', {
@@ -32,6 +42,11 @@
               controller: 'bmiReportController',
               controllerAs: 'vm'
             }
+          },
+          sidemenu: {
+            iconName: 'heart',
+            lbl: 'BMI report',
+            order: 3
           }
         });
     })

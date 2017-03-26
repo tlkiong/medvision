@@ -1,2 +1,39 @@
-﻿<h1>Test Root</h1>
-<div class="" ui-view="subMain"></div>
+﻿<section class="flexDown">
+  <!-- Top nav bar -->
+  <nav class="flexAcross">
+    <div class="logoContainer flexAcross">
+      <div class="iconContainer clickable">
+        <svg class="icon icon-heart">
+          <use xlink:href="#icon-heart"></use>
+        </svg>
+      </div>
+      <div class="">Health Record</div>
+      <div class="sidemenuTrigger">
+        <div class="iconContainer">
+          <svg class="icon icon-heart">
+            <use xlink:href="#icon-heart"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="otherContainer flexAcross">
+      <div class="logoutBtn clickable">log out</div>
+    </div>
+  </nav>
+  <section class="flexAcross">
+    <!-- Side Menu -->
+    <aside>
+      <div class="item flexAcross clickable" ng-repeat="item in vm.sideMenuItem" ng-click="vm.goToPage(item.stateName)" ng-class="{ 'isActive': item.isActive }">
+        <div class="iconContainer">
+          <svg class="icon icon-{{ item.iconName }}">
+            <use xlink:href="{{ '#icon-' + item.iconName }}"></use>
+          </svg>
+        </div>
+        <div class="lbl">{{ item.lbl }}</div>
+      </div>
+    </aside>
+    <div class="contentContainer">
+      <div class="" ui-view="subMain"></div>
+    </div>
+  </section>
+</section>
