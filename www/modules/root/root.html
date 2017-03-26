@@ -1,4 +1,4 @@
-﻿<section class="flexDown">
+﻿<section class="flexDown rootContainer">
   <!-- Top nav bar -->
   <nav class="flexAcross">
     <div class="logoContainer flexAcross">
@@ -8,10 +8,13 @@
         </svg>
       </div>
       <div class="">Health Record</div>
-      <div class="sidemenuTrigger">
-        <div class="iconContainer">
-          <svg class="icon icon-heart">
-            <use xlink:href="#icon-heart"></use>
+      <div class="sideMenuTrigger">
+        <div class="iconContainer clickable" ng-click="vm.toggleSideMenu()">
+          <svg class="icon icon-plus" ng-hide="vm.misc.isSideMenuOpen">
+            <use xlink:href="#icon-plus"></use>
+          </svg>
+          <svg class="icon icon-minus" ng-show="vm.misc.isSideMenuOpen">
+            <use xlink:href="#icon-minus"></use>
           </svg>
         </div>
       </div>
@@ -20,9 +23,9 @@
       <div class="logoutBtn clickable">log out</div>
     </div>
   </nav>
-  <section class="flexAcross">
+  <section class="flexAcross bottomSection">
     <!-- Side Menu -->
-    <aside>
+    <aside ng-class="{ 'sideMenuOpen': vm.misc.isSideMenuOpen}">
       <div class="item flexAcross clickable" ng-repeat="item in vm.sideMenuItem" ng-click="vm.goToPage(item.stateName)" ng-class="{ 'isActive': item.isActive }">
         <div class="iconContainer">
           <svg class="icon icon-{{ item.iconName }}">

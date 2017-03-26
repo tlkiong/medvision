@@ -9,9 +9,12 @@
   function rootController(commonService, rootService) {
     var vm = this;
     vm.goToPage = goToPage;
+    vm.toggleSideMenu = toggleSideMenu;
 
     /* ======================================== Var ==================================================== */
-    vm.misc = {};
+    vm.misc = {
+      isSideMenuOpen: false
+    };
     vm.sideMenuItem = [];
 
     /* ======================================== Services =============================================== */
@@ -19,11 +22,26 @@
     var cmnSvc = commonService;
 
     /* ======================================== Public Methods ========================================= */
+    function toggleSideMenu() {
+      vm.misc.isSideMenuOpen = !vm.misc.isSideMenuOpen;
+    }
+
     function goToPage(stateName) {
+      activateSideMenuItem(stateName);
       cmnSvc.goToPage(stateName);
     }
 
     /* ======================================== Private Methods ======================================== */
+    function activateSideMenuItem(stateName) {
+      vm.sideMenuItem.forEach(function(e) {
+        if(e.stateName === stateName) {
+          e.isActive = true;
+        } else {
+          e.isActive = false;
+        }
+      })
+    }
+
     function setSideMenu() {
       cmnSvc.getAllStates().forEach(function(ele){
         if(cmnSvc.isObjPresent(ele) && cmnSvc.isObjPresent(ele.sidemenu)) {
@@ -42,7 +60,7 @@
         return a.order - b.order;
       });
 
-      console.log('sideMenuItem: ',vm.sideMenuItem);
+      activateSideMenuItem(cmnSvc.getCurrentState().name);
     }
 
     function init() {

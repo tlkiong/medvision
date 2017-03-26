@@ -1,1 +1,90 @@
 @import "../core/style/globals/all";
+
+nav {
+  background-color: $grey;
+  color: $lightGrey;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  .logoContainer {
+    padding: 0.5em 0 0.5em 0.5em;
+    position: relative;
+    width: calc(13% - 5px - 0.5em);
+    .iconContainer {
+      margin-right: 0.5em;
+    }
+    .sideMenuTrigger {
+      position: absolute;
+      right: -0.9em;
+      top: 0.2em;
+      .iconContainer {
+        margin: 0;
+        border-radius: 50%;
+        border: 1px solid $lightBlue;
+        background-color: $lightBlue;
+        padding: 5px;
+        display: flex;
+      }
+    }
+  }
+  .otherContainer {
+    .logoutBtn {
+      padding: 0.5em 1em;
+      text-transform: capitalize;
+      border: 1px solid $lightGrey;
+      border-radius: 3px;
+      &:hover {
+        color: $black;
+        background-color: $lightGrey;
+      }
+    }
+  }
+}
+
+aside {
+  background-color: $grey;
+  color: $lightGrey;
+  font-size: 0.8em;
+  white-space: nowrap;
+  width: 2.8%;
+  // width: 50px;
+  -webkit-transition: width 0.5s; /* Safari */
+  transition: width 0.5s;
+  .item {
+    padding: 1em;
+    align-items: center;
+    text-transform: capitalize;
+    &:hover {
+      background-color: $lightBlue;
+      color: $white;
+    }
+    &.isActive {
+      background-color: $lightBlue;
+      color: $white;
+    }
+    .iconContainer {
+      display: -webkit-flex;
+      display: flex;
+      margin-right: 1em;
+    }
+  }
+  &.sideMenuOpen {
+    width: 13%;
+  }
+}
+
+.rootContainer {
+  height: 100vh;
+  .bottomSection {
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    .contentContainer {
+      background-color: $lightGrey;
+      -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+      flex: 1 0 auto;
+      padding: 1.5em;
+    }
+  }
+}
