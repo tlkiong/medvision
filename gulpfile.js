@@ -13,6 +13,7 @@ var watch = require('gulp-watch');
 var mainBowerFiles = require('main-bower-files');
 var merge = require('merge-stream');
 var runSequence = require('run-sequence');
+var minifyCss = require('gulp-minify-css');
 
 // ============== Convert this to a gulp task to create a gulp task - input, doc's title ==============
 
@@ -20,12 +21,12 @@ gulp.task('ngdocs', [], function() {
     var src = './docs/';
 
     gulp.watch('www/modules/**/*.js', function() {
-        return gulp.src('www/modules/**/*.js')
-            .pipe(gulpDocs.process({
-                html5Mode: false,
-                title: 'AngularJS Dropdown Directive'
-            }))
-            .pipe(gulp.dest(src));
+      return gulp.src('www/modules/**/*.js')
+        .pipe(gulpDocs.process({
+          html5Mode: false,
+          title: 'AngularJS Dropdown Directive'
+        }))
+        .pipe(gulp.dest(src));
     });
 
     connect.server({
@@ -78,6 +79,10 @@ gulp.task('watch', ['watchSass']);
 gulp.task('sass', function() {
     gulp.src('./www/modules/**/*.scss')
         .pipe(sass().on('error', sass.logError))
+        .pipe(minifyCss({
+          keepSpecialComments: 0
+        }))
+        .pipe(rename({ extname: '.min.css' }))
         .pipe(gulp.dest('./www/modules/'));
 });
 
@@ -101,6 +106,9 @@ gulp.task('generateView', function() {
     // compileModuleSass stream
     var compileModuleSass = gulp.src('./www/modules/**/*.scss')
         .pipe(sass().on('error', sass.logError))
+        .pipe(minifyCss({
+          keepSpecialComments: 0
+        }))
         .pipe(gulp.dest('./www/modules'));
     // End of compileModuleSass stream
 
@@ -143,7 +151,7 @@ gulp.task('inject-angular', function() {
 
 gulp.task('inject-css', function() {
     var target = gulp.src('./www/index.html');
-    var sources = gulp.src(['./www/modules/**/*.css']);
+    var sources = gulp.src(['./www/modules/**/*.min.css']);
 
     return target
         .pipe(inject(sources, {
