@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "gulp setup",
-    "start": "http-server ./dist -a localhost -p 8080 -c-1 -o",
+    "start": "http-server ./www -a localhost -p 8080 -c-1 -o",
     "update": "npm install && gulp update"
   },
   "repository": {
