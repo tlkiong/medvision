@@ -14,13 +14,21 @@ nav {
     padding: 0.5em 0 0.5em 0.5em;
     position: relative;
     width: calc(13% - 5px - 0.5em);
+    align-items: center;
     .iconContainer {
       margin-right: 0.5em;
+      display: -webkit-flex;
+      display: flex;
+      margin-top: 5px;
+      .icon {
+        width: 1.5em;
+        height: 1.5em;
+      }
     }
     .sideMenuTrigger {
       position: absolute;
       right: -1em;
-      top: 0.2em;
+      top: 0.5em;
       .iconContainer {
         margin: 0;
         border-radius: 50%;
@@ -28,6 +36,10 @@ nav {
         background-color: $lightBlue;
         padding: 5px;
         display: flex;
+        .icon {
+          width: 1em;
+          height: 1em;
+        }
       }
     }
   }
@@ -50,7 +62,7 @@ aside {
   color: $lightGrey;
   font-size: 0.8em;
   white-space: nowrap;
-  width: calc(2.8% - 5px);
+  width: calc(3.3% - 5px);
   -webkit-transition: width 0.5s; /* Safari */
   transition: width 0.5s;
   border-right: 5px solid $lightBlue;
@@ -61,15 +73,30 @@ aside {
     &:hover {
       background-color: $lightBlue;
       color: $white;
+      .iconContainer {
+        .icon {
+          fill: $white;
+        }
+      }
     }
     &.isActive {
       background-color: $lightBlue;
       color: $white;
+      .iconContainer {
+        .icon {
+          fill: $white;
+        }
+      }
     }
     .iconContainer {
       display: -webkit-flex;
       display: flex;
       margin-right: 1em;
+      .icon {
+        width: 1.5em;
+        height: 1.5em;
+        fill: $lightBlue;
+      }
     }
   }
   &.sideMenuOpen {

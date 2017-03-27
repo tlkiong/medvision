@@ -14,7 +14,7 @@
             }
           },
           sidemenu: {
-            iconName: 'heart',
+            iconName: 'asthma',
             lbl: 'ACQ_REPORT',
             order: 1
           }
@@ -29,7 +29,7 @@
             }
           },
           sidemenu: {
-            iconName: 'heart',
+            iconName: 'bp',
             lbl: 'BP_REPORT',
             order: 2
           }
@@ -44,7 +44,7 @@
             }
           },
           sidemenu: {
-            iconName: 'heart',
+            iconName: 'bmi',
             lbl: 'BMI_REPORT',
             order: 3
           }
