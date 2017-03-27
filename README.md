@@ -38,3 +38,4 @@ Ok! If you have reached here, I am going to assume you have everything minimally
     - insert all CSS & JS file as import (eg: `<link...>` and `<script...`) into `/www/index.html`. This means all CSS & JS file under `/www/modules/**/*` and also all CSS & JS for `/www/lib` based on what is specified in their bower.json file
 4. `npm start` will run a simple HTTP server just to serve the `/www/index.html` file. It isn't a live reload server thus any changes that happen to the files, you would have to refresh the browser
 5. `gulp watch` will watch all `.scss` files for changes then compile them to `.css` files
+6. When you want to generate production ready files, do `gulp prod`. This will concat & minify all css & js under the `/www/modules` folder and all of bower files. The resulting prod files will be at `./dist`
